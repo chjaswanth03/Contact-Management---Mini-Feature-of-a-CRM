@@ -1,132 +1,102 @@
-# Contact Management - Mini Feature of a CRM
+<<<<<<< HEAD
+# Contact Management System
 
-## Project Overview
-The **Contact Management System** is a simple web application that serves as a mini feature of a Customer Relationship Management (CRM) system. The app allows users to efficiently manage customer contact information with the ability to **add**, **view**, **edit**, and **delete** contacts. 
-
-This project was built using the following technologies:
-- **Frontend**: ReactJS, Material UI (MUI), Axios
-- **Backend**: Node.js, Express
-- **Database**: MongoDB (or any database of your choice)
-- **State Management**: React hooks (`useState`, `useEffect`)
+## Overview
+This is a contact management system built using **ReactJS** for the frontend, **Node.js** for the backend, and **MongoDB** for database storage. It allows users to **add, view, edit, and delete** contact information in a business setting.
 
 ## Features
-- **Add New Contacts**: Users can add a new contact with essential details such as first name, last name, email, phone number, company, and job title.
-- **View Contacts**: Displays contacts in a **table format** with sorting and pagination to easily navigate through large lists.
+- **Add New Contacts**: Users can add new contacts with details such as first name, last name, email, phone number, company, and job title.
+- **View Contacts**: All contacts are displayed in a table with pagination and sorting options.
 - **Edit Contacts**: Users can update existing contact details.
-- **Delete Contacts**: Users can remove outdated or duplicate contacts from the system.
-  
+- **Delete Contacts**: Users can remove contacts from the system.
+
 ## Technologies Used
-- **Frontend**: ReactJS, Material UI (MUI)
+- **Frontend**: ReactJS, Material UI (MUI), Axios
 - **Backend**: Node.js, Express
-- **Database**: MongoDB (alternatively MySQL/PostgreSQL)
+- **Database**: MongoDB
 - **API**: RESTful API using Express
-- **State Management**: React hooks (`useState`, `useEffect`)
+- **State Management**: React useState, useEffect
 
 ## Installation and Setup
 
 ### Prerequisites
-To run this project locally, make sure you have the following installed:
-- **Node.js**: (v14 or above)
-- **MongoDB**: Use MongoDB locally or set up a **MongoDB Atlas** cluster for cloud hosting.
-  
-### Steps to Set Up
+- Node.js (v14 or above)
+- MongoDB (or any database you prefer)
 
-1. **Clone the Repository**:
-   First, clone the repository to your local machine:
-   ```bash
-   git clone https://github.com/your-username/contact-management.git
-   cd contact-management
-   Install Dependencies:
+### Clone the Repository
 
-For Frontend (React): Navigate to the client directory and install the dependencies:
+```bash
+git clone https://github.com/your-username/contact-management.git
+cd contact-management
+=======
+# Getting Started with Create React App
 
-cd client
-npm install
-For Backend (Node.js): Navigate to the server directory and install the backend dependencies:
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-cd server
-npm install
-Database Setup:
+## Available Scripts
 
-If you're using MongoDB, ensure it's running on your local machine, or use a MongoDB Atlas cloud database. Modify the connection string in the backend config (e.g., server/config/db.js).
-For MySQL/PostgreSQL, set up the database and modify the DB configuration files as per your database setup.
-Running the Application:
+In the project directory, you can run:
 
-Start the Backend (Node.js): Navigate to the server directory and run the following:
+### `npm start`
 
-npm start
-The backend will run on http://localhost:5000.
+Runs the app in the development mode.\
+Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-Start the Frontend (React): Navigate to the client directory and run the following:
+The page will reload when you make changes.\
+You may also see any lint errors in the console.
 
-npm start
-The frontend will run on http://localhost:3000.
+### `npm test`
 
-Accessing the Application: Once both the frontend and backend servers are running, visit http://localhost:3000 in your browser. The frontend will interact with the backend on http://localhost:5000.
+Launches the test runner in the interactive watch mode.\
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-Database Schema
-For MongoDB, the schema for storing contact details looks like this:
-const mongoose = require('mongoose');
+### `npm run build`
 
-const contactSchema = new mongoose.Schema({
-  firstName: {
-    type: String,
-    required: true,
-  },
-  lastName: {
-    type: String,
-    required: true,
-  },
-  email: {
-    type: String,
-    required: true,
-    unique: true,
-  },
-  phone: {
-    type: String,
-    required: true,
-  },
-  company: {
-    type: String,
-  },
-  jobTitle: {
-    type: String,
-  }
-});
+Builds the app for production to the `build` folder.\
+It correctly bundles React in production mode and optimizes the build for the best performance.
 
-const Contact = mongoose.model('Contact', contactSchema);
+The build is minified and the filenames include the hashes.\
+Your app is ready to be deployed!
 
-module.exports = Contact;
-API Endpoints
-1. GET /contacts:
-Fetches all contacts from the database.
-Response: A list of all contact objects.
-2. POST /contacts:
-Adds a new contact to the database.
-Body: Contact details (e.g., first name, last name, email, etc.)
-3. PUT /contacts/
-:
-Updates the details of a specific contact.
-URL Parameter: Contact ID
-Body: Updated contact details.
-4. DELETE /contacts/
-:
-Deletes a contact from the database.
-URL Parameter: Contact ID
-Challenges and Solutions
-1. Handling Asynchronous Operations with Axios:
-Challenge: Handling asynchronous requests between the frontend and backend, specifically managing errors when making API requests.
-Solution: Utilized async/await with try/catch blocks in Axios calls to ensure smooth API communication and effective error handling.
-2. Managing State Across Components:
-Challenge: Managing contact data across multiple components, especially when dealing with forms and tables.
-Solution: Used React hooks like useState for local state management and useEffect to fetch data asynchronously when the component mounts.
-3. Database Integration:
-Challenge: Initially, integrating the MongoDB database and setting up models/schema in the backend was tricky.
-Solution: Leveraged Mongoose for schema-based modeling, and connected to a cloud-based MongoDB instance via MongoDB Atlas to avoid local setup issues.
-Future Improvements
-Authentication: Add user authentication using JWT (JSON Web Tokens) to restrict access to authorized users only.
-Search Functionality: Implement a search bar to allow users to search for contacts by name, email, or company.
-Contact Grouping: Allow users to categorize contacts into groups (e.g., by industry or region).
-UI Enhancements: Improve the UI by adding more interactive features and better responsive design.
+See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
+### `npm run eject`
 
+**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+
+If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+
+Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+
+You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+
+## Learn More
+
+You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+
+To learn React, check out the [React documentation](https://reactjs.org/).
+
+### Code Splitting
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+
+### Analyzing the Bundle Size
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+
+### Making a Progressive Web App
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+
+### Advanced Configuration
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+
+### Deployment
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+
+### `npm run build` fails to minify
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+>>>>>>> f30f067 (Initialize project using Create React App)
